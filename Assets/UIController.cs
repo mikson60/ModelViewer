@@ -25,7 +25,9 @@ public class UIController : MonoBehaviour {
 
     [SerializeField] Text m_greetingText;
 
-    [SerializeField] Dropdown m_modelDropdown;
+    // Dropdown
+    [SerializeField] GameObject m_dropdownHider;
+
     [SerializeField] Text m_downloadProgressText;
 
     // Constants
@@ -52,7 +54,8 @@ public class UIController : MonoBehaviour {
 
     private void DownloadEvents_OnDownloadStart()
     {
-        if (m_modelDropdown) { m_modelDropdown.gameObject.SetActive(false); }
+        if (m_dropdownHider) { m_dropdownHider.SetActive(true); }
+
         if (m_downloadProgressText) {
             m_downloadProgressText.gameObject.SetActive(true);
             m_downloadProgressText.text = "Download in progress...";
@@ -61,7 +64,8 @@ public class UIController : MonoBehaviour {
 
     private void DownloadEvents_OnDownloadEnd()
     {
-        if (m_modelDropdown) { m_modelDropdown.gameObject.SetActive(true); }
+        if (m_dropdownHider) { m_dropdownHider.SetActive(false); }
+
         if (m_downloadProgressText) { m_downloadProgressText.gameObject.SetActive(false); }
     }
 
