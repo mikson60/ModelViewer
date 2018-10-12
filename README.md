@@ -11,4 +11,4 @@ This project uses the TriLib asset to download and import model files from a rem
 NodeJS server set up on Heroku.
 
 ## Platform
-Works on Android and PC.
+Works on Android and PC. 
